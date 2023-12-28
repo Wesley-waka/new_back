@@ -1,4 +1,7 @@
 class AdminSessionsController < ApplicationController
+    rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
+    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    rescue_from NoMethodError, with: :couldnt_log_you_in
     skip_before_action :authorized, only: %i[create]
 
     def create
