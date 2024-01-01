@@ -59,8 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_001842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "content"
-    t.bigint "sender_id"
-    t.bigint "receiver_id"
+    t.integer "sender_id"
+    t.integer "receiver_id"
     t.string "sender_class"
     t.string "receiver_class"
     t.index ["appointment_id"], name: "index_messages_on_appointment_id"

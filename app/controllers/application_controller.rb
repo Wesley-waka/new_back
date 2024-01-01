@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-    before_action :authorized
+  before_action :authorized
 
     def issue_token(user, user_type="user")   
       if(user_type == "user")
@@ -37,4 +37,11 @@ class ApplicationController < ActionController::Base
     def logged_in?
       !!current_user
     end
-end
+
+    def authorized
+      unless logged_in?
+        render json: { message: "Please log in" }, status: :unauthorized
+      end
+    end
+
+  end

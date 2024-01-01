@@ -1,6 +1,7 @@
 class CartController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    skip_before_action :authorized, only: [:show]
 
     def show
         if(params[:user_id])
