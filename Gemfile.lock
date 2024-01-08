@@ -97,6 +97,8 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     diff-lcs (1.5.0)
+    dockerfile-rails (1.6.1)
+      rails (>= 3.0.0)
     domain_name (0.6.20231109)
     erubi (1.12.0)
     faker (3.2.2)
@@ -151,6 +153,7 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.4)
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
@@ -273,10 +276,12 @@ DEPENDENCIES
   byebug
   capybara
   debug
+  dockerfile-rails (>= 1.6)
   faker
   importmap-rails
   jbuilder
   jwt
+  pg
   pg_search
   puma (~> 5.0)
   rack-cors

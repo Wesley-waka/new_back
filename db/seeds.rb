@@ -287,7 +287,7 @@ end
 
 puts "8. seeding shopping_cart..."
 5.times do
-  ShoppingCart.create!(order_id: order1.id, product_id: products.sample.id, quantity: rand(1..10))
+  ShoppingCart.create!(order_id: order1.id, product_id: products.sample.id, quantity: rand(1..100))
 end
 
 puts "9. seeding department..."
